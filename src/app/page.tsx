@@ -2,13 +2,13 @@ import { Exo_2 } from 'next/font/google';
 import { items } from '@/data';
 import Item from '@/components/Item';
 import FluidBackground from '@/components/FluidBackground';
-import { Suspense } from 'react';
 import Form from '@/components/Form';
-import FluidLoading from '@/components/FluidLoading';
 
 const titleFont = Exo_2({
   subsets: ['latin'],
 });
+
+export const revalidate = 0;
 
 const Page = () => {
   return (
@@ -32,9 +32,7 @@ const Page = () => {
       </section>
 
       <section className='px-20 py-[152px] bg-gray-500 relative'>
-        <Suspense fallback={<FluidLoading />}>
-          <FluidBackground />
-        </Suspense>
+        <FluidBackground />
 
         <div className='relative'>
           <h4 className='font-bold text-center text-2xl mb-6 text-white'>
